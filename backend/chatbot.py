@@ -2,17 +2,14 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
-# Get API Key from .env
 API_KEY = os.getenv("GEMINI_API_KEY")
 if not API_KEY:
     raise ValueError("❌ GEMINI_API_KEY is missing! Check your .env file.")
 
 print(f"✅ Using API Key: {API_KEY[:5]}...")  # Print partial API key for debugging
 
-# Configure Gemini API
 genai.configure(api_key=API_KEY)
 
 # Initialize the free-tier Gemini model
